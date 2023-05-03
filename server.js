@@ -35,7 +35,7 @@ app.post("/createmember", async (req, res)=>{
     try {
       
       
- console.log(req.body)
+       console.log(req.body.firstname)
        
 // hgf
             const memberSignup = new Member({
