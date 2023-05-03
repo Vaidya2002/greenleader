@@ -28,7 +28,7 @@ const contactDetails = async (req, res, next) => {
         .save()
         .then((result) => {
           // Send alert message to the user
-          res.redirect("/");
+          res.redirect("index.html");
           // Redirect user to the homepage
         })
         .catch((err) => {
