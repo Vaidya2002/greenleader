@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 mongoose.set('strictQuery', true);
-mongoose.connect(process.env.MONGODB_URI, {
+const uri = process.env.MONGO_URI || "mongodb+srv://leader-hostinger:indoleader@cluster0.zi3pbkb.mongodb.net/leaders-hostinger?retryWrites=true&w=majority"
+mongoose.connect(uri, {
     useNewUrlParser:true,
     useUnifiedTopology:true,
 }).then(() => {
