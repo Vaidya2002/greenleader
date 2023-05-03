@@ -11,32 +11,31 @@ require("./config/database");
 const { json } = require("express");
 
 const port = process.env.PORT || 3000;
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(express.static(static_path));
 // app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 // app.use(bodyParser.json())
+const api = require("./routes");
+const Member = require("./models/member.model");
 
+
+app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
 app.use(express.static(path.join(__dirname, "/public" )));
+app.use(`/api`, api);
 
 app.get("*", (req, res)=>{
     res.sendFile(path.join(__dirname + "/public/index.html"))
 })
-const api = require("./routes");
-const Member = require("./models/member.model");
-
-app.use(`/api`, api);
 app.post("/createmember", async (req, res)=>{
     try {
       
-           
       
-
+ console.log(req.body)
        
 // hgf
             const memberSignup = new Member({
