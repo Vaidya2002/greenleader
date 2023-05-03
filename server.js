@@ -40,7 +40,6 @@ app.post("/createmember", async (req, res)=>{
       
 
        
-            // encryptedPassword = await bcrypt.hash(password, 10);
 
             const memberSignup = new Member({
                  firstname : req.body.firstname,
