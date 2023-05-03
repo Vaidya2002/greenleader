@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 mongoose.set('strictQuery', true);
-mongoose.connect("mongodb+srv://LeadersData:Lions@cluster0.zi3pbkb.mongodb.net/?retryWrites=true&w=majority", {
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser:true,
     useUnifiedTopology:true,
 }).then(() => {
