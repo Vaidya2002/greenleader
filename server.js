@@ -2,10 +2,8 @@ const express  = require("express");
 const  app = express();
 
 const bodyParser = require('body-parser');
-
-
+const path = require("path");
 // Use body-parser to parse incoming request bodies
-
 // const path = require("path");
 // const hbs = require("hbs");
 require("./config/database");
@@ -24,10 +22,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "/public" )));
 
-app.get("/", (req, res)=>{
-    res.sendFile(__dirname + "/public/index.html")
+app.get("*", (req, res)=>{
+    res.sendFile(path.join(__dirname + "/public/index.html"))
 })
 const api = require("./routes");
 const Member = require("./models/member.model");
