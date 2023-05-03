@@ -71,10 +71,6 @@ app.post("/createmember", async (req, res)=>{
     }
 });
 
-// app.set("view engine", "hbs");
-// app.set("views",template_path);
-// hbs.registerPartials("", partial_path)
-
 
 
 app.listen(port, ()=>{
