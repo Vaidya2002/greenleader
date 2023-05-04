@@ -24,11 +24,10 @@ const contactDetails = async (req, res, next) => {
         mobile: mobile,
         subject: subject,
         message: message,
-      })
-        .save()
+      }).save()
         .then((result) => {
           // Send alert message to the user
-          res.redirect("index.html");
+          res.send{result}
           // Redirect user to the homepage
         })
         .catch((err) => {
