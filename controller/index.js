@@ -10,6 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 const fs = require("fs");
 const Contact = require('../models/contact.model');
+const Member = require('../models/member.model');
 const contactDetails = async (req, res, next) => {
   const { name, email, mobile, subject, message } = req.body;
   if (!name || !email || !mobile || !subject || !message) {
@@ -106,10 +107,71 @@ const contactDetails = async (req, res, next) => {
 
 //   };
 
+const member = async (req, res) => {
+  try {
+    const {
+      firstname,
+      lastname,
+      email,
+      number,
+      dob,
+      address,
+      profession,
+      collegeName,
+      yearstudying,
+      company,
+      hobbies,
+      award,
+      collegelocation,
+      companylocation,
+      thought,
+      password,
+      transaction
+    } = req.body;
 
+    const memberSignup = new Member({
+      firstname,
+      lastname,
+      email,
+      number,
+      dob,
+      address,
+      profession,
+      collegeName,
+      yearstudying,
+      company,
+      hobbies,
+      award,
+      collegelocation,
+      companylocation,
+      thought,
+      password,
+      transaction
+    });
+
+    const createMember = await memberSignup.save();
+    res.redirect("/?message=success");
+
+  } catch (error) {
+    if (error.name === 'ValidationError') {
+      res.status(400).send({
+        status: "error",
+        message: "Sorry, there was an error while creating the member. Please check your input values and try again.",
+        error: error.message
+      });
+    } else {
+      console.log(error);
+      res.status(500).send({
+        status: "error",
+        message: "Sorry, there was an error while creating the member. Please try again later.",
+        error: error.message
+      });
+    }
+  }
+};
 
  
 module.exports = {
   contactDetails,
-  
+  member
 };
