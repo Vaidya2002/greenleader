@@ -150,7 +150,7 @@ const member = async (req, res) => {
     });
 
     const createMember = await memberSignup.save();
-    res.redirect("/?message=success");
+    res.send(createMember);
 
   } catch (error) {
     if (error.name === 'ValidationError') {
