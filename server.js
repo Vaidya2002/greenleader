@@ -15,7 +15,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // parse application/json
 const api = require("./routes");
-const Member = require("./models/member.model");
 const { member } = require("./controller");
 
 
