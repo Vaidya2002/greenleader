@@ -5,7 +5,6 @@ const bodyParser = require('body-parser');
 const path = require("path");
 
 require("./config/database");
-// const Member = require("./models/member");
 const { json } = require("express");
 
 const port = process.env.PORT || 5000;
