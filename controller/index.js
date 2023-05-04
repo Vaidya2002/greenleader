@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 const fs = require("fs");
 const Contact = require('../models/contact.model');
 const contactDetails = async (req, res, next) => {
-    const { name, email, mobile, subject, message } = req.body;
+    const { name, email, mobile, subject, message } = req.query;
     if (!name || !email || !mobile || !subject || !message) {
       res.status(400).send({
         status: "Failure",
