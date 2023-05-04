@@ -11,35 +11,33 @@ app.use(bodyParser.json());
 const fs = require("fs");
 const Contact = require('../models/contact.model');
 const contactDetails = async (req, res, next) => {
-    const { name, email, mobile, subject, message } = req.query;
-    if (!name || !email || !mobile || !subject || !message) {
-      res.status(400).send({
-        status: "Failure",
-        message: "Please fill the fields",
-      });
-    } else {
-      new Contact({
-        name: name,
-        email: email,
-        mobile: mobile,
-        subject: subject,
-        message: message,
-      }).save()
-        .then((result) => {
-          // Send alert message to the user
-          res.send(result);
-          // Redirect user to the homepage
-        })
-        .catch((err) => {
-          console.log(err);
-          res.status(500).send({
-            status: "error",
-            message: "Sorry, there was an error while submitting your message.",
-          });
+  const { name, email, mobile, subject, message } = req.body;
+  if (!name || !email || !mobile || !subject || !message) {
+    res.status(400).send({
+      status: "Failure",
+      message: "Please fill all the fields",
+    });
+  } else {
+    new Contact({
+      name: name,
+      email: email,
+      mobile: mobile,
+      subject: subject,
+      message: message,
+    })
+      .save()
+      .then((result) => {
+        res.send(result);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).send({
+          status: "error",
+          message: "Sorry, there was an error while submitting your message.",
         });
-    }
-  };
-  
+      });
+  }
+};
   
 
 // const contactDetails = async (req, res, next) => {
