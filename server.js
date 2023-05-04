@@ -13,7 +13,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(express.static(static_path));
 // app.use(bodyParser.urlencoded({ extended: false }))
 
-// parse application/json
 const api = require("./routes");
 const { member } = require("./controller");
 
