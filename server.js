@@ -3,9 +3,7 @@ const  app = express();
 
 const bodyParser = require('body-parser');
 const path = require("path");
-// Use body-parser to parse incoming request bodies
-// const path = require("path");
-// const hbs = require("hbs");
+
 require("./config/database");
 // const Member = require("./models/member");
 const { json } = require("express");
@@ -16,7 +14,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
-// app.use(bodyParser.json())
 const api = require("./routes");
 const Member = require("./models/member.model");
 
