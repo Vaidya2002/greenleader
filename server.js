@@ -16,6 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // parse application/json
 const api = require("./routes");
 const Member = require("./models/member.model");
+const { member } = require("./controller");
 
 
 app.use(bodyParser.json());
@@ -28,48 +29,7 @@ app.use(`/api`, api);
 app.get("*", (req, res)=>{
     res.sendFile(path.join(__dirname + "/public/index.html"))
 })
-app.post("/createmember", async (req, res)=>{
-    try {
-      
-      
-       console.log(req.body.firstname)
-       
-// hgf
-            const memberSignup = new Member({
-                 firstname : req.body.firstname,
-                 lastname : req.body.lastname,
-                 email : req.body.email,
-                 number : req.body.number,
-                 dob : req.body.dob,
-                 address:req.body.address,
-                 profession: req.body.profession,
-                 collegeName:req.body.collegeName,
-                 yearstudying:req.body.yearstudying,
-                 company:req.body.company,
-                 hobbies:req.body.hobbies,
-                 award:req.body.award,
-                 collegelocation:req.body.collegelocation,
-                 companylocation:req.body.companylocation,
-                 thought:req.body.thought,
-                 password:req.body.password,
-                 transaction:req.body.transaction,
-            });
-            
-            const createMember = await memberSignup.save();
-            res.redirect("/?message=success");
-
-
-        } catch(error){
-            console.log(error);
-            res.status(400).send({
-                status: "error",
-                message: "Sorry, there was an error while creating the member. Please try again later.",
-                error: error.message
-            });
-        }
-        
-});
-
+app.post("/member", member)
 
 
 app.listen(port, ()=>{
