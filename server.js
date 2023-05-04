@@ -59,9 +59,15 @@ app.post("/createmember", async (req, res)=>{
             res.redirect("/?message=success");
 
 
-    } catch(error){
-        res.status(400).send(error) 
-    }
+        } catch(error){
+            console.log(error);
+            res.status(400).send({
+                status: "error",
+                message: "Sorry, there was an error while creating the member. Please try again later.",
+                error: error.message
+            });
+        }
+        
 });
 
 
