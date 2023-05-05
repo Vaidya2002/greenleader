@@ -23,7 +23,7 @@
   
   form {
 	border-radius: 5px;
-	max-width:80vw;
+	max-width:100vw;
 	width:70vw;
 	margin: 5% auto;
 	background-color: #FFFFFF;
@@ -309,4 +309,11 @@
   }
   .close{
 	font-size:2.5rem;
+  }
+
+  @media screen and (max-width: 550px) {
+	/* CSS rules for small screens */
+	form{
+		max-width:100vw;
+		width:100vw;	}
   }
