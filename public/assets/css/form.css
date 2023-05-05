@@ -23,7 +23,7 @@
   
   form {
 	border-radius: 5px;
-	max-width:70vw;
+	max-width:80vw;
 	width:70vw;
 	margin: 5% auto;
 	background-color: #FFFFFF;
@@ -174,8 +174,8 @@
   
   form {
 	border-radius: 5px;
-	max-width:700px;
-	width:100%;
+	
+	width:70vw;
 	margin: 5% auto;
 	background-color: #FFFFFF;
 	overflow: hidden;
@@ -300,4 +300,13 @@
   
   #sendmessage.show,.show  {
 	display:block;
+  }
+  .modall{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	display:none;
+  }
+  .close{
+	font-size:2.5rem;
   }

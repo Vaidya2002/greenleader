@@ -460,7 +460,22 @@
                                           <div class="validation"></div>
                                 </div>
                               
-                      
+                                <div class="tnc" style="display:flex;">
+                                    <input type="checkbox" style="width: 1.5rem; margin-right: 5px; margin-top: -7px;" name="terms" id="terms" required style="display: inline-block; margin-right: 5px;">
+                                    <label for="terms" style="display: inline-block; cursor: pointer;" onclick="openModal()">I Agree <span style="color:red;">Terms & Conditions</span> (click on Terms & Conditions to read)</label>
+                                  </div>
+                                  
+                                  <!-- Modal box -->
+                                  <div id="myModal" class="modall">
+                                    <div class="modal-content" style="padding:1rem;">
+                                      <span class="close" onclick="closeModal()">&times;</span>
+                                      <h3>Terms and Conditions</h3>
+                                      <p>1. The Registration fee of 350₹ is for 6 Months of Internship/Membership</p>
+                                      <p>2. Volunteers active throughout first 6 Months will get their 6 months membership automatically upgraded to Annual Membership (Without any additional fee).</p>
+                                      <p>3. Registered Volunteers will be provided with Internship/Membership certificate after 6 Months.</p>
+                                    </div>
+                                  </div>
+        
                       
                       
                         </div>
@@ -697,6 +712,26 @@
     <script src="assets/js/timeline.min.js"></script>
     <script src="assets/js/ajax-mail.js"></script>
     <script src="assets/js/active.js"></script>
+    <script>
+        const form = document.querySelector('form');
+        const termsCheckbox = document.querySelector('#terms');
+      
+        form.addEventListener('submit', (event) => {
+          if (!termsCheckbox.checked) {
+            alert('Please agree to the terms and conditions to submit the form.');
+            event.preventDefault();
+          }
+        });
+        function openModal() {
+    const modal = document.getElementById("myModal");
+    modal.style.display = "block";
+  }
+
+  function closeModal() {
+    const modal = document.getElementById("myModal");
+    modal.style.display = "none";
+  }
+      </script>
 </body>
 
 

@@ -150,25 +150,47 @@ const member = async (req, res) => {
     });
 
     const createMember = await memberSignup.save();
-    res.send(createMember);
+
+    // Check if the member was successfully saved
+    if (createMember) {
+      // If so, show a success message in a dialog box
+      return res.status(200).send(`
+        <script>
+          alert("Successfully submitted!");
+          window.location.href = "/home";
+        </script>
+      `);
+    }
 
   } catch (error) {
-    if (error.name === 'ValidationError') {
-      res.status(400).send({
-        status: "error",
-        message: "Sorry, there was an error while creating the member. Please check your input values and try again.",
-        error: error.message
-      });
+    if (error.code === 11000) {
+      // If the error is due to a duplicate key, show an error message in a dialog box
+      return res.status(400).send(`
+        <script>
+          alert("You are already a user!");
+          window.location.href = "/home";
+        </script>
+      `);
+    } else if (error.name === 'ValidationError') {
+      // If the error is due to validation, show an error message in a dialog box
+      return res.status(400).send(`
+        <script>
+          alert("Sorry, there was an error while creating the member. Please check your input values and try again.");
+          window.location.href = "/home";
+        </script>
+      `);
     } else {
-      console.log(error);
-      res.status(500).send({
-        status: "error",
-        message: "Sorry, there was an error while creating the member. Please try again later.",
-        error: error.message
-      });
+      // For any other error, show an error message in a dialog box
+      return res.status(500).send(`
+        <script>
+          alert("Sorry, there was an error while creating the member. Please try again later.");
+          window.location.href = "/home";
+        </script>
+      `);
     }
   }
 };
+
 
  
 module.exports = {
