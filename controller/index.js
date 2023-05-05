@@ -1,4 +1,3 @@
-// const { Contact } = require("../models");
 const bodyParser = require('body-parser');
 const express = require('express');
 const mongoose = require('mongoose');
