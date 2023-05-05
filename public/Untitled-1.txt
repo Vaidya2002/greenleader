@@ -1,1 +1,0 @@
-mongodb+srv://leader-hostinger:indoleader@cluster0.zi3pbkb.mongodb.net/leaders-hostinger?retryWrites=true&w=majority
