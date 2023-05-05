@@ -9,7 +9,6 @@ const { json } = require("express");
 
 const port = process.env.PORT || 5000;
 app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(express.static(static_path));
 // app.use(bodyParser.urlencoded({ extended: false }))
 
 const api = require("./routes");
