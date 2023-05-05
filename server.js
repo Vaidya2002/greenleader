@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(bodyParser.urlencoded({ extended: false }))
 
 const api = require("./routes");
-const { member } = require("./controller");
+const { memberRegistration } = require("./controller");
 
 
 app.use(bodyParser.json());
@@ -26,7 +26,7 @@ app.use(`/api`, api);
 app.get("*", (req, res)=>{
     res.sendFile(path.join(__dirname + "/public/index.html"))
 })
-app.post("/member", member)
+app.post("/member_registration", memberRegistration)
 
 
 app.listen(port, ()=>{

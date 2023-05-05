@@ -107,7 +107,7 @@ const contactDetails = async (req, res, next) => {
 
 //   };
 
-const member = async (req, res) => {
+const memberRegistration = async (req, res) => {
   try {
     const {
       firstname,
@@ -195,5 +195,5 @@ const member = async (req, res) => {
  
 module.exports = {
   contactDetails,
-  member
+  memberRegistration
 };
