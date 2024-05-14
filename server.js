@@ -7,7 +7,7 @@ const path = require("path");
 require("./config/database");
 const { json } = require("express");
 
-const port = process.env.PORT || 5000;
+const port = 5000;
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -25,7 +25,7 @@ app.use(`/api`, api);
 app.get("*", (req, res)=>{
     res.sendFile(path.join(__dirname + "/public/index.html"))
 })
-app.post("/member_registration", memberRegistration)
+app.post("/register", memberRegistration)
 
 
 app.listen(port, ()=>{

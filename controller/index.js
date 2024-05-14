@@ -107,85 +107,59 @@ const contactDetails = async (req, res, next) => {
 //   };
 
 const memberRegistration = async (req, res) => {
+  console.log(req.body, "bodyyyyy")
   try {
     const {
-      firstname,
-      lastname,
-      email,
-      number,
+      fullname,
       dob,
+      age,
+      gender,
+      bloodgroup,
+      schoolcollege,
       address,
-      profession,
-      collegeName,
-      yearstudying,
-      company,
-      hobbies,
-      award,
-      collegelocation,
-      companylocation,
-      thought,
-      password,
-      transaction
+      qualification,
+      jobstatus,
+      companyname,
+      phoneno,
+      aadharcardno,
+      instagramid
     } = req.body;
 
-    const memberSignup = new Member({
-      firstname,
-      lastname,
-      email,
-      number,
+    const newMember = new Member({
+      fullname,
       dob,
+      age,
+      gender,
+      bloodgroup,
+      schoolcollege,
       address,
-      profession,
-      collegeName,
-      yearstudying,
-      company,
-      hobbies,
-      award,
-      collegelocation,
-      companylocation,
-      thought,
-      password,
-      transaction
+      qualification,
+      jobstatus,
+      companyname,
+      phoneno,
+      aadharcardno,
+      instagramid
     });
 
-    const createMember = await memberSignup.save();
+    const savedMember = await newMember.save();
 
     // Check if the member was successfully saved
-    if (createMember) {
-      // If so, show a success message in a dialog box
-      return res.status(200).send(`
-        <script>
-          alert("Successfully submitted!");
-          window.location.href = "/home";
-        </script>
-      `);
+    if (savedMember) {
+      // If so, send a success message
+      return res.status(200).json({ message: 'Successfully submitted!' });
     }
 
   } catch (error) {
     if (error.code === 11000) {
-      // If the error is due to a duplicate key, show an error message in a dialog box
-      return res.status(400).send(`
-        <script>
-          alert("You are already a user!");
-          window.location.href = "/home";
-        </script>
-      `);
+      // If the error is due to a duplicate key, send an error response
+      return res.status(400).json({ error: 'You are already a user!' });
     } else if (error.name === 'ValidationError') {
-      // If the error is due to validation, show an error message in a dialog box
-      return res.status(400).send(`
-        <script>
-          alert("Sorry, there was an error while creating the member. Please check your input values and try again.");
-          window.location.href = "/home";
-        </script>
-      `);
+      console.log(error, "error")
+      // If the error is due to validation, send an error response
+      return res.status(400).json({ error: 'Validation error. Please check your input values and try again.' });
     } else {
-      // For any other error, show an error message in a dialog box
-      return res.status(500).send(`
-        <script>
-          alert("Sorry, there was an error while creating the member. Please try again later.");
-          window.location.href = "/home";
-        </script>
-      `);
+      // For any other error, send an error response
+      return res.status(500).json({ error: 'Internal Server Error. Please try again later.' });
     }
   }
 };

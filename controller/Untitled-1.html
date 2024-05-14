@@ -357,34 +357,31 @@
 
 <!-- testing templates data -->
 
-
-
-
-<script>
-    document.getElementById("myForm").addEventListener("submit", function(event) {
-        var form = document.getElementById("myForm");
-        if (!form.checkValidity()) {
-            event.preventDefault();
-            event.stopPropagation();
-            markInvalidFields();
-        }
-        form.classList.add('was-validated');
-    }, false);
-
-    function markInvalidFields() {
-        var inputs = document.querySelectorAll('.input-field');
-        inputs.forEach(function(input) {
-            if (!input.validity.valid) {
-                input.classList.add('is-invalid');
-            } else {
-                input.classList.remove('is-invalid');
-            }
-        });
-    }
-</script>
-
-
-
+<div class="container">
+	<!-- code here -->
+	<div class="card">
+		<form class="card-form">
+			<div class="input">
+				<input type="text" class="input-field" value="Alexander Parkinson" required/>
+				<label class="input-label">Full name</label>
+			</div>
+						<div class="input">
+				<input type="text" class="input-field" value="vlockn@gmail.com" required/>
+				<label class="input-label">Email</label>
+			</div>
+						<div class="input">
+				<input type="password" class="input-field" required/>
+				<label class="input-label">Password</label>
+			</div>
+			<div class="action">
+				<button class="action-button" type="submit">Get started</button>
+			</div>
+		</form>
+		<!-- <div class="card-info">
+			<p>By signing up you are agreeing to our <a href="#">Terms and Conditions</a></p>
+		</div> -->
+	</div>
+</div>
 
 <!-- testing templates data -->
 
@@ -403,97 +400,153 @@
                     </div>
                 </div>
 
+                <div class="col-12 col-lg-12">
+                    <div class="contact-form">                                                        
+          
+                        <form action="/member_registration" method="post" >
+                            <h1>Join the purpose, Join the Leaders Club</h1>
+                            
+                          <div class="contentform">
+                            <div id="sendmessage"> Your message has been sent successfully. Thank you. </div>
+                      
+                       
+                            <div class="leftcontact">
+                                  <div class="form-group">
+                                    <p>Surname<span>*</span></p>
+                                    <span class="icon-case"><i class="fa fa-male"></i></span>
+                                      <input type="text" name="lastname" id="nom" data-rule="required" />
+                                      <div class="validation"></div>
+                             </div> 
+                      
+                                  <div class="form-group">
+                                  <p>Name <span>*</span></p>
+                                  <span class="icon-case"><i class="fa fa-user"></i></span>
+                              <input type="text" name="firstname" id="prenom" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Prénom' doit être renseigné."/>
+                                      <div class="validation"></div>
+                            </div>
+                      
+                            <div class="form-group">
+                            <p>E-mail <span>*</span></p>	
+                            <span class="icon-case"><i class="fa fa-user"></i></span>
+                                      <input type="email" name="email" id="email" data-rule="email" data-msg="Vérifiez votre saisie sur les champs : Le champ 'E-mail' est obligatoire."/>
+                                      <div class="validation"></div>
+                            </div>	
+                      
+                            <div class="form-group">
+                            <p>Profession <span>*</span></p>
+                            <span class="icon-case"><i class="fa fa-home"></i></span>
+                              <input type="text" name="profession" id="society" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Société' doit être renseigné."/>
+                                      <div class="validation"></div>
+                            </div>
+                      
+                            <div class="form-group">
+                            <p>College Name <span>*</span></p>
+                            <span class="icon-case"><i class="fa fa-location-arrow"></i></span>
+                              <input type="text" name="collegeName" id="adresse" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Adresse' doit être renseigné."/>
+                                      <div class="validation"></div>
+                            </div>
+                            <div class="form-group">
+                            <p>College Location <span>*</span></p>
+                            <span class="icon-case"><i class="fa fa-location-arrow"></i></span>
+                              <input type="text" name="collegelocation" id="adresse" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Adresse' doit être renseigné."/>
+                                      <div class="validation"></div>
+                            </div>
+                            <div class="form-group">
+                            <p>Company(Mention NA if you are a student) <span>*</span></p>
+                            <span class="icon-case"><i class="fa fa-location-arrow"></i></span>
+                              <input type="text" name="company" id="adresse" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Adresse' doit être renseigné."/>
+                                      <div class="validation"></div>
+                            </div>
+                      
+                            <div class="form-group">
+                            <p>Company Location  <span>*</span></p>
+                            <span class="icon-case"><i class="fa fa-map-marker"></i></span>
+                              <input type="text" name="companylocation" id="postal" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Code postal' doit être renseigné."/>
+                                      <div class="validation"></div>
+                            </div>	
+                            <div class="form-group">
+                                <p>Password<span>*</span></p>	
+                                <span class="icon-case"><i class="fa fa-location-arrow"></i></span>
+                                          <input type="text" name="password" id="sujet" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Sujet' doit être renseigné."/>
+                                          <div class="validation"></div>
+                                </div>
+                              
+                                <div class="tnc" style="display:flex;">
+                                    <input type="checkbox" style="width: 1.5rem; margin-right: 5px; margin-top: -7px;" name="terms" id="terms" required style="display: inline-block; margin-right: 5px;">
+                                    <label for="terms" style="display: inline-block; cursor: pointer;" onclick="openModal()">I Agree <span style="color:red;">Terms & Conditions</span> (click on Terms & Conditions to read)</label>
+                                  </div>
+                                  
+                                  <!-- Modal box -->
+                                  <div id="myModal" class="modall" style="display:none;">
+                                    <div class="modal-content" style="padding:1rem; ">
+                                      <span class="close" onclick="closeModal()">&times;</span>
+                                      <h3>Terms and Conditions</h3>
+                                      <p>1. The Registration fee of 350₹ is for 6 Months of Internship/Membership</p>
+                                      <p>2. Volunteers active throughout first 6 Months will get their 6 months membership automatically upgraded to Annual Membership (Without any additional fee).</p>
+                                      <p>3. Registered Volunteers will be provided with Internship/Membership certificate after 6 Months.</p>
+                                    </div>
+                                  </div>
+        
+                      
+                      
+                        </div>
+                      
+                        <div class="rightcontact">	
+                      
+                            <div class="form-group">
+                            <p>City <span>*</span></p>
+                            <span class="icon-case"><i class="fa fa-home"></i></span>
+                              <input type="text" name="address" id="ville" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Ville' doit être renseigné."/>
+                                      <div class="validation"></div>
+                            </div>	
+                      
+                            <div class="form-group">
+                            <p>Phone number <span>*</span></p>	
+                            <span class="icon-case"><i class="fa fa-phone"></i></span>
+                              <input type="text" name="number" id="phone" data-rule="maxlen:10" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Téléphone' doit être renseigné. Minimum 10 chiffres"/>
+                                      <div class="validation"></div>
+                            </div>
+                      
+                            <div class="form-group">
+                            <p>Skills (A skill worth contributing) <span>*</span></p>
+                            <span class="icon-case"><i class="fa fa-info"></i></span>
+                                      <input type="text" name="hobbies" id="fonction" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Fonction' doit être renseigné."/>
+                                      <div class="validation"></div>
+                            </div>
+                      
+                            <div class="form-group">
+                            <p>Achievements/designations <span>*</span></p>	
+                            <span class="icon-case"><i class="fa fa-info"></i></span>
+                                      <input type="text" name="award" id="sujet" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Sujet' doit être renseigné."/>
+                                      <div class="validation"></div>
+                            </div>
+                            <div class="form-group">
+                            <p>Stream of study <span>*</span></p>	
+                            <span class="icon-case"><i class="fa fa-home"></i></span>
+                                      <input type="text" name="yearstudying" id="sujet" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Sujet' doit être renseigné."/>
+                                      <div class="validation"></div>
+                            </div>
+                            <img  style="height: 180px;" src="./assets/img/eventimgs/qr.jpeg"/>
 
-                <div class="container "  style="margin-bottom: 60px;" >
-                    <!-- code here -->
-                    <div class="card">
-                
-                        <h1>Join the purpose, Join the Leaders Club</h1>
-                
-                        <form class="card-form" id="myForm" action="/register" method="POST">
-                            <div class="input">
-                                <input type="text" class="input-field" id="fullname" name="fullname" required/>
-                                <label class="input-label" for="fullname">Full Name</label>
-                                <div class="invalid-feedback">Please enter your full name.</div>
+                            <div class="form-group">
+                            <p>Transaction ID(Scan QR and pay 350 Rs.)<span>*</span></p>	
+                            <span class="icon-case"><i class="fa fa-location-arrow"></i></span>
+                                      <input type="text" name="transaction" id="sujet" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Sujet' doit être renseigné."/>
+                                      <div class="validation"></div>
                             </div>
-                            <div class="input">
-                                <input type="text" class="input-field" id="dob" name="dob" required pattern="\d{2}/\d{2}/\d{4}"/>
-                                <label class="input-label" for="dob">Date of Birth (dd/mm/yyyy)</label>
-                                <div class="invalid-feedback">Please enter a valid date of birth in the format dd/mm/yyyy.</div>
-                            </div>
-                            <div class="input">
-                                <input type="number" class="input-field" id="age" name="age" required/>
-                                <label class="input-label" for="age">Age</label>
-                                <div class="invalid-feedback">Please enter your age.</div>
-                            </div>
-                            <div class="input">
-                                <select class="input-field" id="gender" name="gender" required>
-                                    <option value="">Select Gender</option>
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
-                                    <option value="other">Other</option>
-                                </select>
-                                <label class="input-label field-focus" for="gender">Gender</label>
-                                <div class="invalid-feedback">Please select your gender.</div>
-                            </div>
-                            <div class="input">
-                                <input type="text" class="input-field" id="bloodgroup" name="bloodgroup" required/>
-                                <label class="input-label" for="bloodgroup">Blood Group</label>
-                                <div class="invalid-feedback">Please enter your blood group.</div>
-                            </div>
-                            <div class="input">
-                                <input type="text" class="input-field" id="schoolcollege" name="schoolcollege" required/>
-                                <label class="input-label" for="schoolcollege">College/School Name</label>
-                                <div class="invalid-feedback">Please enter your college/school name.</div>
-                            </div>
-                            <div class="input">
-                                <textarea class="input-field" id="address" name="address" value="" required></textarea>
-                                <label class="input-label" for="address">Address</label>
-                                <div class="invalid-feedback">Please enter your address.</div>
-                            </div>
-                            <div class="input">
-                                <input type="text" class="input-field" id="qualification" name="qualification" value="" required/>
-                                <label class="input-label" for="qualification">Recent Qualification</label>
-                                <div class="invalid-feedback">Please enter your recent qualification.</div>
-                            </div>
-                            <div class="input">
-                                <select class="input-field" id="jobstatus" name="jobstatus" value="" required>
-                                    <option value="">Select Job Status</option>
-                                    <option value="recruited">Recruited</option>
-                                    <option value="not-recruited">Not Recruited</option>
-                                    <option value="business">Business</option>
-                                </select>
-                                <label class="input-label field-focus" for="jobstatus">Job Status</label>
-                                <div class="invalid-feedback">Please select your job status.</div>
-                            </div>
-                            <div class="input">
-                                <input type="text" class="input-field" id="companyname" name="companyname" value="" required/>
-                                <label class="input-label" for="companyname">Company Name</label>
-                                <div class="invalid-feedback">Please enter your company name.</div>
-                            </div>
-                            <div class="input">
-                                <input type="tel" class="input-field" id="phoneno" name="phoneno" value="" required/>
-                                <label class="input-label" for="phoneno">Phone Number</label>
-                                <div class="invalid-feedback">Please enter your phone number.</div>
-                            </div>
-                            <div class="input">
-                                <input type="text" class="input-field" id="aadharcardno" name="aadharcardno" value="" required/>
-                                <label class="input-label" for="aadharcardno">Aadhar Card Number</label>
-                                <div class="invalid-feedback">Please enter your Aadhar card number.</div>
-                            </div>
-                            <div class="input">
-                                <input type="text" class="input-field" id="instagramid" name="instagramid" value="" required/>
-                                <label class="input-label" for="instagramid">Instagram ID</label>
-                                <div class="invalid-feedback">Please enter your Instagram ID.</div>
-                            </div>
-                            <div class="action">
-                                <button class="action-button" type="submit">Submit</button>
-                            </div>
-                        </form>
+                          
+                            <div class="form-group">
+                            <p>which way you are willing to contribute in the club, so that we can reach you in times of those activities<span>*</span></p>
+                            <span class="icon-case"><i class="fa fa-comments-o"></i></span>
+                                      <textarea name="thought" rows="14" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Message' doit être renseigné."></textarea>
+                                      <div class="validation"></div>
+                            </div>	
+                        </div>                        
+                      <button type="submit" class="bouton-contact">Send</button>
+                        
+                      </form>	
                     </div>
                 </div>
-
-                
             </div>
         </div>
     </section>
@@ -669,33 +722,6 @@
     <script src="assets/js/ajax-mail.js"></script>
     <script src="assets/js/active.js"></script>
     <script>
-        document.getElementById('myForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent default form submission
-    
-            // Get form data
-            const formData = new FormData(this);
-    
-            // Send form data using fetch
-            fetch('/register', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    // If the request was successful, show a success message
-                    alert(data.message);
-                } else {
-                    // If there was an error, show the error message
-                    alert(data.error);
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        });
-    </script>
-    <script>
         const form = document.querySelector('form');
         const termsCheckbox = document.querySelector('#terms');
       
@@ -719,6 +745,3 @@
 
 
 </html>
-
-
-// new form

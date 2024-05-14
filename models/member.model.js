@@ -1,47 +1,61 @@
 const mongoose = require("mongoose");
 
-const leaderSchema = new mongoose.Schema({
-    firstname: {
-        type:String,
+const memberSchema = new mongoose.Schema({
+    fullname: {
+        type: String,
         required: true
     },
-    lastname: {
-        type:String,
+    dob: {
+        type: Date,
         required: true
     },
-    email:{
-        type:String,
-        required: true,
-        unique:true
+    age: {
+        type: Number,
+        required: true
     },
-    
-    number:{
-        type:Number,
-        required: true,
-        unique:true
+    gender: {
+        type: String,
+        required: true
     },
-    password:{
-        type:String,
-        
+    bloodgroup: {
+        type: String,
+        required: true
     },
-  
-    address:String,
-    profession:{
-        type:String,
+    schoolcollege: {
+        type: String,
+        required: true
+    },
+    address: {
+        type: String,
         required: false
     },
-  
-    companylocation:String,
-    companylocation:String,
-    collegeName:String,
-    yearstudying:String,
-    company:String,
-    hobbies:String,
-    award:String,
-    thought:String,
-    transaction:String
-
+    qualification: {
+        type: String,
+        required: true
+    },
+    jobstatus: {
+        type: String,
+        required: true
+    },
+    companyname: {
+        type: String,
+        required: true
+    },
+    phoneno: {
+        type: String,
+        required: true
+    },
+    aadharcardno: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    instagramid: {
+        type: String,
+        required: false,
+        unique: false
+    }
 });
 
-const Member = new mongoose.model("Member",leaderSchema);
+const Member = mongoose.model("Member", memberSchema);
 module.exports = Member;

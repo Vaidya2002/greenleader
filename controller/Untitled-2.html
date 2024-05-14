@@ -357,7 +357,91 @@
 
 <!-- testing templates data -->
 
-
+<div class="container">
+    <!-- code here -->
+    <div class="card">
+        <form class="card-form" id="myForm">
+            <div class="input">
+                <input type="text" class="input-field" id="full-name" required/>
+                <label class="input-label" for="full-name">Full Name</label>
+                <div class="invalid-feedback">Please enter your full name.</div>
+            </div>
+            <div class="input">
+                <input type="text" class="input-field" id="dob" required pattern="\d{2}/\d{2}/\d{4}"/>
+                <label class="input-label" for="dob">Date of Birth (dd/mm/yyyy)</label>
+                <div class="invalid-feedback">Please enter a valid date of birth in the format dd/mm/yyyy.</div>
+            </div>
+            <div class="input">
+                <input type="number" class="input-field" id="age" required/>
+                <label class="input-label" for="age">Age</label>
+                <div class="invalid-feedback">Please enter your age.</div>
+            </div>
+            <div class="input">
+                <select class="input-field" id="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+                <label class="input-label field-focus" for="gender">Gender</label>
+                <div class="invalid-feedback">Please select your gender.</div>
+            </div>
+            <div class="input">
+                <input type="text" class="input-field" id="blood-group" required/>
+                <label class="input-label" for="blood-group">Blood Group</label>
+                <div class="invalid-feedback">Please enter your blood group.</div>
+            </div>
+            <div class="input">
+                <input type="text" class="input-field" id="school-college" required/>
+                <label class="input-label" for="school-college">College/School Name</label>
+                <div class="invalid-feedback">Please enter your college/school name.</div>
+            </div>
+            <div class="input">
+                <textarea class="input-field" id="address" required></textarea>
+                <label class="input-label" for="address">Address</label>
+                <div class="invalid-feedback">Please enter your address.</div>
+            </div>
+            <div class="input">
+                <input type="text" class="input-field" id="qualification" required/>
+                <label class="input-label" for="qualification">Recent Qualification</label>
+                <div class="invalid-feedback">Please enter your recent qualification.</div>
+            </div>
+            <div class="input">
+                <select class="input-field" id="job-status" required>
+                    <option value="">Select Job Status</option>
+                    <option value="recruited">Recruited</option>
+                    <option value="not-recruited">Not Recruited</option>
+                    <option value="business">Business</option>
+                </select>
+                <label class="input-label field-focus" for="job-status">Job Status</label>
+                <div class="invalid-feedback">Please select your job status.</div>
+            </div>
+            <div class="input">
+                <input type="text" class="input-field" id="company-name" required/>
+                <label class="input-label" for="company-name">Company Name</label>
+                <div class="invalid-feedback">Please enter your company name.</div>
+            </div>
+            <div class="input">
+                <input type="tel" class="input-field" id="phone-no" required/>
+                <label class="input-label" for="phone-no">Phone Number</label>
+                <div class="invalid-feedback">Please enter your phone number.</div>
+            </div>
+            <div class="input">
+                <input type="text" class="input-field" id="aadhar-card-no" required/>
+                <label class="input-label" for="aadhar-card-no">Aadhar Card Number</label>
+                <div class="invalid-feedback">Please enter your Aadhar card number.</div>
+            </div>
+            <div class="input">
+                <input type="text" class="input-field" id="instagram-id" name="instagram-id" value="" required/>
+                <label class="input-label" for="instagram-id">Instagram ID</label>
+                <div class="invalid-feedback">Please enter your Instagram ID.</div>
+            </div>
+            <div class="action">
+                <button class="action-button" type="submit">Get Started</button>
+            </div>
+        </form>
+    </div>
+</div>
 
 
 <script>
@@ -400,96 +484,6 @@
                     <div class="section-title">
                         <span><i class="fal fa-pen"></i>Write Here</span>
                         <h1>Be a Member</h1>
-                    </div>
-                </div>
-
-
-                <div class="container "  style="margin-bottom: 60px;" >
-                    <!-- code here -->
-                    <div class="card">
-                
-                        <h1>Join the purpose, Join the Leaders Club</h1>
-                
-                        <form class="card-form" id="myForm" action="/register" method="POST">
-                            <div class="input">
-                                <input type="text" class="input-field" id="fullname" name="fullname" required/>
-                                <label class="input-label" for="fullname">Full Name</label>
-                                <div class="invalid-feedback">Please enter your full name.</div>
-                            </div>
-                            <div class="input">
-                                <input type="text" class="input-field" id="dob" name="dob" required pattern="\d{2}/\d{2}/\d{4}"/>
-                                <label class="input-label" for="dob">Date of Birth (dd/mm/yyyy)</label>
-                                <div class="invalid-feedback">Please enter a valid date of birth in the format dd/mm/yyyy.</div>
-                            </div>
-                            <div class="input">
-                                <input type="number" class="input-field" id="age" name="age" required/>
-                                <label class="input-label" for="age">Age</label>
-                                <div class="invalid-feedback">Please enter your age.</div>
-                            </div>
-                            <div class="input">
-                                <select class="input-field" id="gender" name="gender" required>
-                                    <option value="">Select Gender</option>
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
-                                    <option value="other">Other</option>
-                                </select>
-                                <label class="input-label field-focus" for="gender">Gender</label>
-                                <div class="invalid-feedback">Please select your gender.</div>
-                            </div>
-                            <div class="input">
-                                <input type="text" class="input-field" id="bloodgroup" name="bloodgroup" required/>
-                                <label class="input-label" for="bloodgroup">Blood Group</label>
-                                <div class="invalid-feedback">Please enter your blood group.</div>
-                            </div>
-                            <div class="input">
-                                <input type="text" class="input-field" id="schoolcollege" name="schoolcollege" required/>
-                                <label class="input-label" for="schoolcollege">College/School Name</label>
-                                <div class="invalid-feedback">Please enter your college/school name.</div>
-                            </div>
-                            <div class="input">
-                                <textarea class="input-field" id="address" name="address" value="" required></textarea>
-                                <label class="input-label" for="address">Address</label>
-                                <div class="invalid-feedback">Please enter your address.</div>
-                            </div>
-                            <div class="input">
-                                <input type="text" class="input-field" id="qualification" name="qualification" value="" required/>
-                                <label class="input-label" for="qualification">Recent Qualification</label>
-                                <div class="invalid-feedback">Please enter your recent qualification.</div>
-                            </div>
-                            <div class="input">
-                                <select class="input-field" id="jobstatus" name="jobstatus" value="" required>
-                                    <option value="">Select Job Status</option>
-                                    <option value="recruited">Recruited</option>
-                                    <option value="not-recruited">Not Recruited</option>
-                                    <option value="business">Business</option>
-                                </select>
-                                <label class="input-label field-focus" for="jobstatus">Job Status</label>
-                                <div class="invalid-feedback">Please select your job status.</div>
-                            </div>
-                            <div class="input">
-                                <input type="text" class="input-field" id="companyname" name="companyname" value="" required/>
-                                <label class="input-label" for="companyname">Company Name</label>
-                                <div class="invalid-feedback">Please enter your company name.</div>
-                            </div>
-                            <div class="input">
-                                <input type="tel" class="input-field" id="phoneno" name="phoneno" value="" required/>
-                                <label class="input-label" for="phoneno">Phone Number</label>
-                                <div class="invalid-feedback">Please enter your phone number.</div>
-                            </div>
-                            <div class="input">
-                                <input type="text" class="input-field" id="aadharcardno" name="aadharcardno" value="" required/>
-                                <label class="input-label" for="aadharcardno">Aadhar Card Number</label>
-                                <div class="invalid-feedback">Please enter your Aadhar card number.</div>
-                            </div>
-                            <div class="input">
-                                <input type="text" class="input-field" id="instagramid" name="instagramid" value="" required/>
-                                <label class="input-label" for="instagramid">Instagram ID</label>
-                                <div class="invalid-feedback">Please enter your Instagram ID.</div>
-                            </div>
-                            <div class="action">
-                                <button class="action-button" type="submit">Submit</button>
-                            </div>
-                        </form>
                     </div>
                 </div>
 
@@ -668,33 +662,6 @@
     <script src="assets/js/timeline.min.js"></script>
     <script src="assets/js/ajax-mail.js"></script>
     <script src="assets/js/active.js"></script>
-    <script>
-        document.getElementById('myForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent default form submission
-    
-            // Get form data
-            const formData = new FormData(this);
-    
-            // Send form data using fetch
-            fetch('/register', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    // If the request was successful, show a success message
-                    alert(data.message);
-                } else {
-                    // If there was an error, show the error message
-                    alert(data.error);
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        });
-    </script>
     <script>
         const form = document.querySelector('form');
         const termsCheckbox = document.querySelector('#terms');
