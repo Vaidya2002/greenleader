@@ -142,6 +142,7 @@
                                             </li>
                                         </ul> -->
                                     </li>
+
                                     <li><a href="about.html">about</a></li>
                                     <!-- <li><a href="causes.html">Causes</a>
                                         <ul class="sub-menu">
@@ -150,6 +151,7 @@
                                             <li><a href="donation.html">donation</a></li>
                                         </ul>
                                     </li> -->
+                                    <li><a href="team.html">Team</a></li>
                                     <li><a href="#">Projects</a>
                                         <ul class="sub-menu">
                                             <!-- <li><a href="faq.html">faq</a></li>
@@ -160,7 +162,7 @@
                                             <li><a href="soch.html">Soch</a></li>
                                             <li><a href="happyhours.html">Happy Hours</a></li>
                                             <li><a href="prakriti.html">Prakriti</a></li>
-                                            <li><a href="indoyuva.html">Indo Yuva</a></li>
+                                            
 
 
                                         </ul>
@@ -201,6 +203,7 @@
                                             <li><a href="index-3.html">Homepage 3</a></li>
                                         </ul> -->
                                     </li>
+                                    <li><a href="team.html">Team</a></li>
                                     <li><a href="about.html">about</a></li>
                                     <!-- <li>
                                         <a class="has-arrow" href="causes.html">Causes</a>
@@ -221,7 +224,8 @@
                                             <li><a href="soch.html">Soch</a></li>
                                             <li><a href="happyhours.html">Happy Hours</a></li>
                                             <li><a href="prakriti.html">Prakriti</a></li>
-                                            <li><a href="indoyuva.html">Indo Yuva</a></li>
+                                            
+                                            
 
 
                                         </ul>
@@ -286,7 +290,7 @@
                         <h1>Our Story of <span>Compassion and Change</span></h1>
                     </div>
                     <p>We want to make change possible for people. We are a multifaceted NGO focusing on a
-                        number of major issues of concern and looking forward to broadening our horizon towards more
+                         major issues of concern and looking forward to broadening our horizon towards more
                         alarming issues.
                         </p>
                     
@@ -320,57 +324,50 @@
                     <div class="featured-timeline">
                         <div class="timeline">
                             <div class="timeline__wrap">
-                              <div class="timeline__items">
-                                
-                                <div class="timeline__item">
-                                  <div class="timeline__content">
-                                    <h2>1998</h2>
-                                    <p>- Journey Was Started</p>
-                                    <img src="assets/img/timeline/1.jpg" alt="">
-                                  </div>
+                                <div class="timeline__items">
+                                    <div class="timeline__item">
+                                        <div class="timeline__content">
+                                            <h2>1998</h2>
+                                            <p>- Journey Was Started</p>
+                                            <img src="assets/img/timeline/1.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="timeline__item">
+                                        <div class="timeline__content">
+                                            <h2>2002</h2>
+                                            <p>- Journey Was Started</p>
+                                            <img src="assets/img/timeline/2.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="timeline__item">
+                                        <div class="timeline__content">
+                                            <h2>2010</h2>
+                                            <p>- Journey Was Started</p>
+                                            <img src="assets/img/timeline/3.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="timeline__item">
+                                        <div class="timeline__content">
+                                            <h2>2018</h2>
+                                            <p>- Journey Was Started</p>
+                                            <img src="assets/img/timeline/4.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="timeline__item">
+                                        <div class="timeline__content">
+                                            <h2>2020</h2>
+                                            <p>- Journey Was Started</p>
+                                            <img src="assets/img/timeline/1.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="timeline__item">
+                                        <div class="timeline__content">
+                                            <h2>2021</h2>
+                                            <p>- Journey Was Started</p>
+                                            <img src="assets/img/timeline/2.jpg" alt="">
+                                        </div>
+                                    </div>
                                 </div>
-                                
-                                <div class="timeline__item">
-                                  <div class="timeline__content">
-                                    <h2>2002</h2>
-                                    <p>- Journey Was Started</p>
-                                    <img src="assets/img/timeline/2.jpg" alt="">
-                                  </div>
-                                </div>
-                                
-                                <div class="timeline__item">
-                                  <div class="timeline__content">
-                                    <h2>2010</h2>
-                                    <p>- Journey Was Started</p>
-                                    <img src="assets/img/timeline/3.jpg" alt="">
-                                  </div>
-                                </div>
-                                
-                                <div class="timeline__item">
-                                  <div class="timeline__content">
-                                    <h2>2018</h2>
-                                    <p>- Journey Was Started</p>
-                                    <img src="assets/img/timeline/4.jpg" alt="">
-                                  </div>
-                                </div>
-                                
-                                <div class="timeline__item">
-                                  <div class="timeline__content">
-                                    <h2>2020</h2>
-                                    <p>- Journey Was Started</p>
-                                    <img src="assets/img/timeline/1.jpg" alt="">
-                                  </div>
-                                </div>
-                                
-                                <div class="timeline__item">
-                                  <div class="timeline__content">
-                                    <h2>2021</h2>
-                                    <p>- Journey Was Started</p>
-                                    <img src="assets/img/timeline/2.jpg" alt="">
-                                  </div>
-                                </div>
-                                
-                              </div>
                             </div>
                         </div>
                     </div>
@@ -378,6 +375,30 @@
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const timelineWrap = document.querySelector('.timeline__wrap');
+            const timelineItems = document.querySelector('.timeline__items');
+            const items = Array.from(timelineItems.children);
+            const totalWidth = items.reduce((acc, item) => acc + item.offsetWidth, 0);
+
+            timelineItems.style.width = `${totalWidth}px`;
+
+            // Duplicate the timeline items to create the seamless effect
+            const clonedItems = items.map(item => item.cloneNode(true));
+            clonedItems.forEach(clone => timelineItems.appendChild(clone));
+
+            timelineItems.style.animation = `scroll ${totalWidth / 50}s linear infinite`;
+
+            timelineWrap.addEventListener('mouseover', () => {
+                timelineItems.style.animationPlayState = 'paused';
+            });
+
+            timelineWrap.addEventListener('mouseout', () => {
+                timelineItems.style.animationPlayState = 'running';
+            });
+        });
+    </script>
 
     <section class="skills-section section-padding">
         <div class="container">
